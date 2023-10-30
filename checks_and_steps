@@ -1,0 +1,14 @@
+checks
+
+Reading parquet file and creating dataframe
+finding all location id in dataframe
+Null value check, Special character check
+Creation time relabeling
+Grid value reading round-off
+
+-> Creating dataframe of each location id
+Dropping Duplicates
+Creation time as index
+
+Creating units column with help of resampling(with window of 15 min)
+Assignment of null values
