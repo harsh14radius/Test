@@ -13,9 +13,20 @@ status "P" data only
 Error_reason = "No consumption" and unit = 0 
 power factor imbalance
 
-
-
-
-
 Creating units column with help of resampling(with window of 15 min)
 Assignment of null values
+
+
+check neccesary
+-> Taking only those records which contains status 'P'
+-> Checking Meter features derived from Current ,Voltage and pf.
+-> Checking Condition which has no consumption but kWh and kVAh is increasing.
+-> Checking power factor imbalance.
+-> Checking Current and voltage are same in contentious Reading packets.
+-> How manage data in which data packet reading is greater than sanctioned load.
+-> Meter Change
+-> Load Change
+-> Reading Calibration
+
+voltage zero current is not zero can't happan
+current zero but reading increasing contineously can't happan
