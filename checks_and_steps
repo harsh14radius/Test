@@ -2,20 +2,23 @@ checks
 
 Reading parquet file and creating dataframe
 finding all location id in dataframe
-Null value check, Special character check
+Null value check, Special character check, Duplicates check
 Creation time relabeling
 #Grid value reading round-off#
 
 -> Creating dataframe of each location id
-Dropping Duplicates
-Creation time as index
+Creation time as index for time series data
 status "P" data only
 Error_reason = "No consumption" and unit = 0 
 power factor imbalance
-
-Creating units column with help of resampling(with window of 15 min)
-Assignment of null values
-
+Frequency impbalance
+missing data packets inbetween different intervals of time 
+status "P",Error_reason ="Success still unit is wrong
+Checking Condition which has no consumption but kWh and kVAh is increasing.
+Meter Change this will impact on grid_reading_kwh
+grid reading having decimals value for some interval of time
+units derived from grid_reading_kwh
+filling missing data with next unit
 
 check neccesary
 -> Taking only those records which contains status 'P'
