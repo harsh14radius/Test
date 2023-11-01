@@ -22,6 +22,9 @@ filling missing data with next unit
 
 grid_reading_kwh (closing - opening)= -ve #grid reading got decrease
 
+in resampling we can't (max-min) of grid_reading_kwh 
+
+
 check neccesary
 -> Taking only those records which contains status 'P'
 -> Checking Meter features derived from Current ,Voltage and pf.
