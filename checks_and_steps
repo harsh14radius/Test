@@ -20,6 +20,8 @@ grid reading having decimals value for some interval of time
 units derived from grid_reading_kwh
 filling missing data with next unit
 
+grid_reading_kwh (closing - opening)= -ve #grid reading got decrease
+
 check neccesary
 -> Taking only those records which contains status 'P'
 -> Checking Meter features derived from Current ,Voltage and pf.
