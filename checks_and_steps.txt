@@ -1,0 +1,85 @@
+Steps
+
+1-> Reading Data file and Creating dataframe
+2-> finding all location id in dataframe and storing them
+3->  ~status "P"
+    ~ Null value check,
+    ~ Special character check (for object type data columns)
+    ~ Duplicates check
+    ~ grid_reading round-off
+
+checks
+@reading
+(for complete data)
+
+# Data Status =="P"
+# Error_reason='No comsumption' unit should be "0"
+# Null value check
+# Special character check (for object type data columns)
+# cum_pf(Power factor) sould lies between (0,1)
+# Frequency should lies between (50+-5)
+# should we round_off grid_reading ?
+
+
+@processing
+at single location_id  
+-> Creating dataframe of each location id
+-> Creationas timestamp relabelling
+-> Creation time as index for time series data
+
+# checks with grid_reading_kwh
+1-> Meter Change  (len(df['meter_sr_no])>1)
+2-> Reading smaller than previous reading
+    ~ Grid_reading_kwh (closing - opening) = -ve #grid reading got decrease
+    ~ In resampling we can't (max-min) of grid_reading_kwh 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+missing data packets inbetween different intervals of time 
+status "P",Error_reason ="Success still unit is wrong
+Checking Condition which has no consumption but kWh and kVAh is increasing.
+Meter Change this will impact on grid_reading_kwh*
+grid reading having decimals value for some interval of time
+units derived from grid_reading_kwh
+filling missing data with next unit
+
+
+check neccesary
+-> Taking only those records which contains status 'P'
+-> Checking Meter features derived from Current ,Voltage and pf.
+-> Checking Condition which has no consumption but kWh and kVAh is increasing.
+-> Checking power factor imbalance.
+-> Checking Current and voltage are same in contentious Reading packets.
+-> How manage data in which data packet reading is greater than sanctioned load.
+-> Meter Change
+-> Load Change
+-> Reading Calibration
+
+voltage zero current is not zero can't happan
+current zero but reading increasing contineously can't happan
+
+rounding off grid reading
+absolute consumption
+
+#filling missing data
+-> basic techniques 1. forward fill/backward fill
+2 inear interpolation
+3.rolling window
+4. if seasonility is present we can fill previous year value
+
+@advanced techniques
+1. KNN interputor
+2. iterative imputor/ mice (multiple imputation by Change in equation)
+
+stationary check
