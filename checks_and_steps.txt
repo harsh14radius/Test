@@ -61,7 +61,8 @@ check neccesary
 -> Reading Calibration
 -> Voltage zero current is not zero can't happan
 -> Current zero but reading increasing contineously can't happen
-
+-> pf=1 no comsumption or no load or ideal Condition
+-> if instant_cum_KW active Power > instant_cum_KVA then power factor is -1.
 
 @ Dealing with missing data
 #Basic techniques 
