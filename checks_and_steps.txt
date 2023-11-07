@@ -2,11 +2,6 @@
 
 1-> Reading Data file and Creating dataframe
 2-> finding all location id in dataframe and storing them
-3->  ~status "P"
-    ~ Null value check,
-    ~ Special character check (for object type data columns)
-    ~ Duplicates check
-    ~ grid_reading round-off
 
 Checks
 @Reading (for complete data)
@@ -17,7 +12,9 @@ Checks
 # Special character check (for object type data columns)
 # cum_pf(Power factor) sould lies between (0,1)
 # Frequency should lies between (50+-5)
-# should we round_off grid_reading ? #(value is more accurate when testing)
+# When voltage is 0 current should be zero too
+# When volage is 0 np value should increment
+# should we round_off grid_reading ? #(raw value will be more accurate while testing)
 
 
 @Processing
@@ -29,7 +26,7 @@ at single location_id
 @ Checks with grid_reading_kwh
 1-> Meter Change  (len(df['meter_sr_no])>1)
 2-> Reading smaller than previous reading
-    ~ Grid_reading_kwh (closing - opening) = -ve #grid reading got decrease
+    ~ Grid_reading_kwh (closing - opening) = -ve # Not possible
     ~ In resampling we can't (max-min) of grid_reading_kwh 
 
 
@@ -38,7 +35,7 @@ at single location_id
 Unresloved
 # Meter Change -this will impact on grid_reading_kwh*
 
-Resolved
+Resolved (for cross-validation with data)
 # Absolute consumption check irregularity
 # Missing data packets inbetween different intervals of time 
 # Status "P",Error_reason ="Success still unit is wrong
@@ -53,16 +50,6 @@ Resolved
 4. PF, Frequency ?
 5. location_id, site_id, meter_sr_no ?
 
-
-check neccesary
--> Checking Meter features derived from Current ,Voltage and pf.
--> Checking Current and voltage are same in contentious Reading packets.
--> Load Change
--> Reading Calibration
--> Voltage zero current is not zero can't happan
--> Current zero but reading increasing contineously can't happen
--> pf=1 no comsumption or no load or ideal Condition
--> if instant_cum_KW active Power > instant_cum_KVA then power factor is -1.
 
 @ Dealing with missing data
 #Basic techniques 
@@ -80,3 +67,13 @@ check neccesary
 
 @Time series Stationary check
 @Model testing
+
+check neccesary
+-> Checking Meter features derived from Current ,Voltage and pf.
+-> Checking Current and voltage are same in contentious Reading packets.
+-> Load Change
+-> Reading Calibration
+-> Voltage zero current is not zero can't happan
+-> Current zero but reading increasing contineously can't happen
+-> pf=1 no comsumption or no load or ideal Condition
+-> if instant_cum_KW active Power > instant_cum_KVA then power factor is -1.
