@@ -1,1 +1,6 @@
-hello
+Data understanding and cleaning
+
+Each folder contain-
+-> Checks whch should be kept in mind for Data Cleaning and Validation
+-> 'Eda' file which contains the final code performing Eda 
+-> 'Test' and 'Try' file contains errors and all Checks and Validation
