@@ -1,0 +1,5 @@
+-> KWh > KVAh (not more than 1)
+-> Single Phase voltage  or three phase voltage supply in three phase meter
+-> Volatge zero  current should be zero
+-> Voltage and Current both zero- Comsumption should be zero
+-> Voltage is present but current is very low Comsumption can be zero 
