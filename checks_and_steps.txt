@@ -7,14 +7,14 @@ Checks
 @Reading (for complete data)
 
 # Data Status =="P"
-# Error_reason='No comsumption' unit should be "0"
+# Error_reason='No consumption' unit should be "0"
 # Null value check
 # Special character check (for object type data columns)
-# cum_pf(Power factor) sould lies between (0,1)
+# cum_pf(Power factor) should lies between (0,1)
 # Frequency should lies between (50+-5)
 # When voltage is 0 current should be zero too
-# When volage is 0 np value should increment
-# should we round_off grid_reading ? #(raw value will be more accurate while testing)
+# When voltage is 0 np value should increment
+# Should we round_off grid_reading ? #(raw value will be more accurate while testing)
 
 
 @Processing
@@ -31,17 +31,17 @@ at single location_id
 
 
 
-@ Challanges
+@ Challenges
 Unresloved
 # Meter Change -this will impact on grid_reading_kwh*
 
 Resolved (for cross-validation with data)
 # Absolute consumption check irregularity
-# Missing data packets inbetween different intervals of time 
+# Missing data packets between different intervals of time 
 # Status "P",Error_reason ="Success still unit is wrong
 # Status "P",Error_reason ='no_consumption' still unit is not 0
-# Checking Condition which has no consumption but kWh and kVAh is increasing.
-# Units are not accurate with refrence to grid_reading_kwh(closing - opening)
+# Checking Conditions which have no consumption but kWh and kVAh is increasing.
+# Units are not accurate with reference to grid_reading_kwh(closing - opening)
 
 @ Final Dataframe required parameters
 1. Grid_reading_kwh
@@ -62,18 +62,19 @@ Resolved (for cross-validation with data)
 6. If seasonility is present we can fill previous year value
 
 #Advanced techniques
-1. KNN interputor
-2. iterative imputor/ mice (multiple imputation by Change in equation)
+1. KNN interruptor
+2. iterative imputation/ mice (multiple imputation by Change in equation)
 
 @Time series Stationary check
 @Model testing
 
-check neccesary
+check necessary
 -> Checking Meter features derived from Current ,Voltage and pf.
--> Checking Current and voltage are same in contentious Reading packets.
+-> Checking Current and voltage are the same in continuous Reading packets.
 -> Load Change
 -> Reading Calibration
--> Voltage zero current is not zero can't happan
--> Current zero but reading increasing contineously can't happen
--> pf=1 no comsumption or no load or ideal Condition
+-> Voltage zero current is not zero can't happen
+-> Current zero but reading increasing continuously can't happen
+-> pf=1 no consumption or no load or ideal Condition
 -> if instant_cum_KW active Power > instant_cum_KVA then power factor is -1.
+
