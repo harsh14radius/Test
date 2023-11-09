@@ -70,7 +70,7 @@ Resolved (for cross-validation with data)
 
 check necessary
 -> Checking Meter features derived from Current ,Voltage and pf.
--> Checking Current and voltage are the same in contentious Reading packets.
+-> Checking Current and voltage are the same in continuous Reading packets.
 -> Load Change
 -> Reading Calibration
 -> Voltage zero current is not zero can't happen
